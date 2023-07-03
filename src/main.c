@@ -21,14 +21,20 @@ int main(int argc, char* argv[])
         printf("\n[2] - Exit\n");
         printf("\n> ");
         fflush(stdout);
+        // Allocate memory for storage of input
+        char* buf = malloc(sizeof(char) * BUFSIZ);
         // Capture input
-        char buf[BUFSIZ];
         if (fgets(buf, BUFSIZ, stdin) == NULL)
         {
+            // Log error and exit with failure status code
             perror("fgets");
             return EXIT_FAILURE;
         }
+        // Convert input to integer
         int selection = atoi(buf);
+        // Free memory
+        free(buf);
+        // Process input
         switch (selection)
         {
             case 1:
