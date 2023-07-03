@@ -1,8 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char argv[])
+int main(int argc, char* argv[])
 {
+    printf("Arguments:\n");
+    for (int i = 0; i < argc; i++)
+    {
+        printf("\n[%d]: %s\n", i, argv[i]);
+    }
+    printf("\nPress enter to begin. ");
+    fflush(stdout);
+    while (getchar() != '\n') ;
     int choice = 0;
     do
     {
