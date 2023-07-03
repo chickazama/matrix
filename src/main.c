@@ -11,6 +11,7 @@ int main(int argc, char argv[])
         printf("=== Choose ===\n");
         printf("\n[1] - Continue\n");
         printf("\n[2] - Exit\n");
+        printf("\n> ");
         // Capture input
         char buf[BUFSIZ];
         if (fgets(buf, BUFSIZ, stdin) == NULL)
@@ -32,5 +33,5 @@ int main(int argc, char argv[])
                 break;
         }
     } while (!choice) ;
-    return EXIT_FAILURE;
+    return EXIT_SUCCESS;
 }
