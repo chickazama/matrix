@@ -12,6 +12,7 @@ int main(int argc, char argv[])
         printf("\n[1] - Continue\n");
         printf("\n[2] - Exit\n");
         printf("\n> ");
+        fflush(stdout);
         // Capture input
         char buf[BUFSIZ];
         if (fgets(buf, BUFSIZ, stdin) == NULL)
@@ -29,6 +30,7 @@ int main(int argc, char argv[])
                 break;
             default:
                 printf("Invalid Selection. Press enter to try again. ");
+                fflush(stdout);
                 while (getchar() != '\n') ;
                 break;
         }
