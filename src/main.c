@@ -23,6 +23,12 @@ int main(int argc, char* argv[])
         fflush(stdout);
         // Allocate memory for storage of input
         char* buf = malloc(sizeof(char) * BUFSIZ);
+        if (buf == NULL)
+        {
+            // Log error and exit with failure status code
+            perror("malloc");
+            return EXIT_FAILURE;
+        }
         // Capture input
         if (fgets(buf, BUFSIZ, stdin) == NULL)
         {
